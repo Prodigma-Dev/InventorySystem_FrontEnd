@@ -1,0 +1,82 @@
+@use '@angular/material' as mat;
+@use './create-theme' as createTheme;
+@use './skins/blue_theme' as blueTheme;
+@use './skins/indigo_theme' as indigoTheme;
+@use './theme-reset';
+
+html {
+    @include createTheme.custom-theme(light, 'indigo-light', indigoTheme.$primary-palette, 0);
+
+
+    &.indigo-light {
+        @include createTheme.custom-theme(light, 'indigo-light', indigoTheme.$primary-palette, 0);
+    }
+
+    &.indigo-dark {
+        @include createTheme.custom-theme(dark, 'indigo-dark', indigoTheme.$primary-palette, 0);
+    }
+
+    &.green-light {
+        @include createTheme.custom-theme(light, 'green-light', mat.$green-palette, 0);
+    }
+
+    &.green-dark {
+        @include createTheme.custom-theme(dark, 'green-dark', mat.$green-palette, 0);
+    }
+
+    &.red-light {
+        @include createTheme.custom-theme(light, 'red-light', mat.$red-palette, 0);
+    }
+
+    &.red-dark {
+        @include createTheme.custom-theme(dark, 'red-dark', mat.$red-palette, 0);
+    }
+
+    &.yellow-light {
+        @include createTheme.custom-theme(light, 'yellow-light', mat.$yellow-palette, 0);
+    }
+
+    &.yellow-dark {
+        @include createTheme.custom-theme(dark, 'yellow-dark', mat.$yellow-palette, 0);
+    }
+
+    &.cyan-light {
+        @include createTheme.custom-theme(light, 'cyan-light', mat.$cyan-palette, 0);
+    }
+
+    &.cyan-dark {
+        @include createTheme.custom-theme(dark, 'cyan-dark', mat.$cyan-palette, 0);
+    }
+
+    &.orange-light {
+        @include createTheme.custom-theme(light, 'orange-light', mat.$orange-palette, 0);
+    }
+
+    &.orange-dark {
+        @include createTheme.custom-theme(dark, 'orange-dark', mat.$orange-palette, 0);
+    }
+
+    &.azure-light {
+        @include createTheme.custom-theme(light, 'azure-light', mat.$azure-palette, 0);
+    }
+
+    &.azure-dark {
+        @include createTheme.custom-theme(dark, 'azure-dark', mat.$azure-palette, 0);
+    }
+
+    &.violet-light {
+        @include createTheme.custom-theme(light, 'violet-light', mat.$violet-palette, 0);
+    }
+
+    &.violet-dark {
+        @include createTheme.custom-theme(dark, 'violet-dark', mat.$violet-palette, 0);
+    }
+
+    &.rose-light {
+        @include createTheme.custom-theme(light, 'rose-light', mat.$rose-palette, 0);
+    }
+
+    &.rose-dark {
+        @include createTheme.custom-theme(dark, 'rose-dark', mat.$rose-palette, 0);
+    }
+}

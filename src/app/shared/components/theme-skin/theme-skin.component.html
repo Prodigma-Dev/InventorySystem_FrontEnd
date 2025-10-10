@@ -1,0 +1,225 @@
+<mat-card class="">
+  <mat-card-header
+    class="d-flex justify-content-between p-x-24 p-y-15 bg-primary"
+  >
+    <mat-card-title class="text-white">Theme Builder</mat-card-title>
+    <mat-icon class="text-white" (click)="toggleRightSidebar.emit()"
+      >close</mat-icon
+    >
+  </mat-card-header>
+  <div class="p-l-10">
+    <!-- Theme Option -->
+    <h4 class="f-w-700 m-b-8 m-t-12">Theme Option</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      @for (mode of modes; track mode) {
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          fxFlex="100"
+          mat-raised-button
+          (click)="setThemeMode(mode.key)"
+          [matTooltip]="mode.name || ''"
+          class="rounded"
+          [ngStyle]="{ 'background-color': mode.bgColor, color: mode.color }"
+        >
+          @if (mode.key === settings().themeMode) {
+          <mat-icon class="primary-color"> check </mat-icon>
+          }
+          <mat-icon class="material-symbols-outlined f-s-20">
+            {{ mode.icon }}
+          </mat-icon>
+          <span>{{ mode.name }}</span>
+        </button>
+      </div>
+      }
+    </div>
+
+    <!-- Theme Colors -->
+    <h4 class="f-w-700 m-b-8 m-t-12">Theme Colors</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      @for (themeName of themeNames; track themeName) {
+      <div
+        fxFlex="33.3"
+        fxLayoutAlign="space-around center"
+        class="p-x-6 p-y-4"
+      >
+        <button
+          mat-fab
+          (click)="setThemeName(themeName.key)"
+          [matTooltip]="themeName.name || ''"
+          class="rounded"
+          [ngStyle]="{
+            'background-color': themeName.bgColor,
+            color: themeName.color
+          }"
+        >
+          @if (themeName.key === settings().themeColor) {
+          <mat-icon> check_circle </mat-icon>
+          }
+        </button>
+      </div>
+      }
+    </div>
+
+    <!-- Theme Direction -->
+    <h4 class="f-w-700 m-b-8 m-t-12">Theme Direction</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button fxFlex="100" mat-raised-button (click)="setThemeRtl(false)">
+          <mat-icon>
+            @if (!settings().rtl) { radio_button_checked } @else{
+            radio_button_unchecked }
+          </mat-icon>
+          <mat-icon class="p-x-5">format_textdirection_l_to_r</mat-icon>
+          LTR
+        </button>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button fxFlex="100" mat-raised-button (click)="setThemeRtl(true)">
+          <mat-icon>
+            @if (settings().rtl) { radio_button_checked } @else{
+            radio_button_unchecked }
+          </mat-icon>
+          <mat-icon class="p-x-5">format_textdirection_r_to_l</mat-icon>
+          RTL
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar type -->
+    @if(settings().menu !== 'horizontal'){
+    <h4 class="f-w-700 m-b-8 m-t-12">Sidebar type</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeMenuType('full')"
+        >
+          <mat-icon> @if (settings().menuType === 'full') { check } </mat-icon>
+          <mat-icon class="material-symbols-outlined p-x-5"
+            >dock_to_left</mat-icon
+          >
+          Full
+        </button>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeMenuType('mini')"
+        >
+          <mat-icon> @if (settings().menuType === 'mini') { check } </mat-icon>
+          <mat-icon class="material-symbols-outlined p-x-5"
+            >dock_to_right</mat-icon
+          >
+          Mini
+        </button>
+      </div>
+    </div>
+    }
+
+    <!-- Layout type -->
+    <h4 class="f-w-700 m-b-8 m-t-12">Layout type</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          class="p-x-2"
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeMenu('vertical')"
+        >
+          <mat-icon> @if (settings().menu === 'vertical') { check } </mat-icon>
+          <mat-icon class="material-symbols-outlined p-x-5"
+            >align_self_stretch</mat-icon
+          >
+          Veritical
+        </button>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          class="p-x-2"
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeMenu('horizontal')"
+        >
+          <mat-icon>
+            @if (settings().menu === 'horizontal') { check }
+          </mat-icon>
+          <mat-icon class="material-symbols-outlined p-x-5"
+            >vertical_distribute</mat-icon
+          >
+          Horizontal
+        </button>
+      </div>
+    </div>
+
+    <!-- Container Option -->
+    <h4 class="f-w-700 m-b-8 m-t-12">Container Option</h4>
+    <div fxLayout="column" fxLayout="row wrap">
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          class="p-x-2"
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeContainer('full')"
+        >
+          <mat-icon> @if (settings().container === 'full') { check } </mat-icon>
+          <mat-icon class="material-symbols-outlined">toolbar</mat-icon>
+          Full
+        </button>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4">
+        <button
+          class="p-x-2"
+          mat-raised-button
+          fxFlex="100"
+          (click)="setThemeContainer('boxed')"
+        >
+          <mat-icon>
+            @if (settings().container === 'boxed') { check }
+          </mat-icon>
+          <mat-icon class="material-symbols-outlined">dock_to_right</mat-icon>
+          Boxed
+        </button>
+      </div>
+    </div>
+
+    <!-- Breadcrump -->
+    <div fxLayout="column" fxLayout="row wrap" class="m-b-6 m-t-12">
+      <div fxFlex="50" class="p-x-0 p-y-6">
+        <label class="f-w-700">Page Breadcrump</label>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4 d-flex justify-content-end">
+        <mat-slide-toggle
+          [ngModel]="settings().breadcrump"
+          (change)="setThemeBreadcrump(!settings().breadcrump)"
+        ></mat-slide-toggle>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div fxLayout="column" fxLayout="row wrap" class="m-b-6 m-t-6">
+      <div fxFlex="50" class="p-x-0 p-y-6">
+        <label class="f-w-700">Page Footer</label>
+      </div>
+      <div fxFlex="50" class="p-x-6 p-y-4 d-flex justify-content-end">
+        <mat-slide-toggle
+          [ngModel]="settings().hasFooter"
+          (change)="setThemeFooter(!settings().hasFooter)"
+        ></mat-slide-toggle>
+      </div>
+      <div fxFlex="100" class="p-l-12">
+        <label class="f-w-700">Position:</label>
+      </div>
+      <div fxFlex="100" class="p-x-4 p-y-2">
+        <mat-radio-group
+          [value]="settings().footerPosition"
+          (change)="setThemeFooterPosition($event)"
+        >
+          <mat-radio-button value="static">Static</mat-radio-button>
+          <mat-radio-button value="sticky">Sticky</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+</mat-card>

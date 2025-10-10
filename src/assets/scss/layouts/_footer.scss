@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+footer {
+  &.sticky {
+    position: sticky;
+    bottom: 5px;
+    left: 0;
+    z-index: 100;
+  }
+
+  &.static {
+    position: static;
+  }
+
+  background: $white;
+  text-align: center;
+  height: $footer-height;
+  box-shadow: $box-shadow;
+  color: $gray-300;
+  border-top: 1px solid $borderColor;
+  margin: $layout-margin;
+  border-radius: $cardBorderRadius;;
+  width: auto;
+
+  span {
+    color: var(--mat-sys-primary);
+  }
+}
+
+.dark {
+  footer {
+    background: $darkbackground;
+    border-color: $dividerBorderColor;
+  }
+}

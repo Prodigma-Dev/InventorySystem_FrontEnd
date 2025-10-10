@@ -1,0 +1,87 @@
+@use "../variables" as *;
+@use "../grid/variables" as gridVar;
+@use 'sass:map';
+
+@each $breakpoint, $value in gridVar.$breakpoints {
+  $infix: map.get(gridVar.$breakpoint-infixs, $breakpoint);
+
+  @if $infix == '' {
+    .card-stretch {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - gridVar.$grid-gutter);
+    }
+  } @else {
+    @media (min-width: $value) {
+      .card-#{$infix}-stretch {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - gridVar.$grid-gutter);
+      }
+    }
+  }
+}
+
+// card
+.mat-mdc-card {
+  margin-bottom: gridVar.$grid-gutter;
+  border-radius: $border-radius;
+}
+.mat-mdc-card-header {
+  padding: gridVar.$grid-gutter gridVar.$grid-gutter 0;
+}
+
+.mat-mdc-card-content {
+  padding: gridVar.$grid-gutter;
+}
+
+.mat-mdc-card {
+  background-color: $cardbg;
+}
+
+.cardWithShadow {
+  box-shadow: $cardshadow;
+}
+
+.mat-mdc-card-title {
+  line-height: 1.6rem;
+}
+
+.mdc-card__actions {
+  padding: gridVar.$grid-gutter;
+}
+
+.theme-card.mat-mdc-card {
+  .mat-mdc-card-header {
+    padding: 16px gridVar.$grid-gutter;
+  }
+  .mat-mdc-card-content {
+    padding: gridVar.$grid-gutter;
+  }
+}
+
+.card-hover {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  &:hover {
+    scale: 1.01;
+    transition: all 0.1s ease-in 0s;
+  }
+}
+
+.mat-mdc-menu-panel{
+  border-radius: $border-radius;
+}
+
+.cardBorder {
+  .mdc-card {
+    box-shadow: none !important;
+    border: 1px solid $borderColor !important;
+    &.shadow-none {
+      border: 0 !important;
+    }
+  }
+}
+
+.h-100vh {
+  height: 100vh;
+}

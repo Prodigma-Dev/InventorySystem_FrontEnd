@@ -1,0 +1,29 @@
+@use "variables";
+@use "helpers/color";
+@use "helpers/icon-size";
+@use "helpers/size";
+
+//container layout
+@use "overrides/materialoverrides";
+@use "container";
+@use "layouts/layouts";
+@use "grid/grid";
+@use "helpers/custom-flex";
+@use "helpers/index";
+
+// pages
+@use "pages/auth";
+@use "pages/dashboards";
+
+@use 'components'; 
+@use 'themes/theme';
+
+@font-face {
+    font-family: 'ShadowsIntoLightTwo-Regular';
+    src: url(/assets/fonts/ShadowsIntoLightTwo-Regular.woff2) format('woff2'),
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(/assets/fonts/Inter_24pt-Regular.woff2) format('woff2'),
+}

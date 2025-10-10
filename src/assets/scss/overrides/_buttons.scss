@@ -1,0 +1,100 @@
+@use "../variables" as *;
+@use "@angular/material" as mat;
+@use 'sass:color';
+
+.mdc-button,
+.mat-mdc-unelevated-button,
+.mat-button-toggle .mat-button-toggle-ripple {
+  border-radius: $border-radius !important;
+}
+
+.mat-mdc-raised-button {
+  box-shadow: $cardshadow;
+}
+
+.mat-mdc-fab,
+.mat-mdc-mini-fab,
+.mat-mdc-fab:hover,
+.mat-mdc-fab:focus,
+.mat-mdc-mini-fab:hover,
+.mat-mdc-mini-fab:focus {
+  box-shadow: none;
+}
+
+.mat-button-toggle-button {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .flex-sm-row {
+    flex-direction: row !important;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.btn-small {
+  @include mat.button-overrides(
+    (
+      filled-container-height: 32px,
+      outlined-container-height: 32px,
+      tonal-container-height: 32px,
+      text-container-height: 32px,
+      protected-container-height: 32px,
+    )
+  );
+}
+
+.btn-medium {
+  @include mat.button-overrides(
+    (
+      filled-container-height: 40px,
+      outlined-container-height: 40px,
+      tonal-container-height: 40px,
+      text-container-height: 40px,
+      protected-container-height: 40px,
+    )
+  );
+}
+
+.btn-large {
+  @include mat.button-overrides(
+    (
+      filled-container-height: 48px,
+      outlined-container-height: 48px,
+      tonal-container-height: 48px,
+      text-container-height: 48px,
+      protected-container-height: 48px
+    )
+  );
+}
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    @include mat.button-overrides((
+      filled-container-color: $color,
+      filled-disabled-container-color: color.mix($color, $white, 80%),
+      filled-label-text-color: $white,
+
+      outlined-outline-color: $color,
+      outlined-label-text-color: $color,
+      outlined-disabled-outline-color: color.mix($color, $white, 80%),
+      outlined-disabled-label-text-color: color.mix($color, $white, 80%),
+
+      tonal-container-color: color.mix($color, $white, 60%),
+      tonal-label-text-color: $color,
+      tonal-disabled-container-color: color.mix($color, $white, 80%),
+      tonal-disabled-label-text-color: color.mix($color, $white, 80%),
+
+      text-label-text-color: $color,
+      text-disabled-label-text-color: color.mix($color, $white, 80%),
+
+      protected-container-color: $color,
+      protected-label-text-color: $white,
+      protected-disabled-container-color: color.mix($color, $white, 80%),
+      protected-disabled-label-text-color: color.mix($color, $white, 80%)
+    ));
+  }
+}

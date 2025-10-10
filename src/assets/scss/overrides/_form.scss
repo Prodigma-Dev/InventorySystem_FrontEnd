@@ -1,0 +1,37 @@
+@use "../variables" as *;
+
+// for radius
+
+.mdc-text-field--outlined {
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__trailing,
+  .mdc-notched-outline__notch {
+    border-color: $borderformColor;
+  }
+
+  .mdc-notched-outline .mdc-notched-outline__leading {
+    border-top-left-radius: var(--mat-sys-corner-small);
+    border-bottom-left-radius: var(--mat-sys-corner-small);
+    width: var(--mat-sys-corner-small);
+  }
+
+  .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: var(--mat-sys-corner-small);
+    border-bottom-right-radius: var(--mat-sys-corner-small);
+    width: var(--mat-sys-corner-small);
+  }
+}
+
+.mdc-form-field > label {
+  font-size: 14px;
+}
+
+.hide-hint {
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: $border-radius !important;
+}

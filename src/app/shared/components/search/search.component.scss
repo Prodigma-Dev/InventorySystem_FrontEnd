@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+::ng-deep .app-search {
+    .mat-mdc-form-field-flex {
+        background: $white;
+        border-radius: $border-radius;
+        padding: 4px 12px;
+        box-shadow: $box-shadow;
+    }
+
+    button {
+        height: 35px;
+    }
+
+    .mat-mdc-notch-piece {
+        border-width: 0 !important;
+    }
+
+}

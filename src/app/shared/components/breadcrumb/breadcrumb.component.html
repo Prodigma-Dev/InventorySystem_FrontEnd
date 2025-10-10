@@ -1,0 +1,22 @@
+@if (show()) {
+  <nav class="breadcrumb-bar">
+    <div class="breadcrumb-left">
+      <h1 class="breadcrumb-title">
+        {{ breadcrumbs().at(-1)?.label || "Page" }}
+      </h1>
+      <div class="breadcrumb-trail">
+        <a routerLink="/" class="breadcrumb-link">
+          <mat-icon class="m-t-4">home</mat-icon>
+        </a>
+        @for (item of breadcrumbs(); track item.url) {
+        <span class="breadcrumb-separator">•</span>
+        <a [routerLink]="item.url" class="breadcrumb-link">{{ item.label }}</a>
+        }
+      </div>
+    </div>
+  
+    <button mat-icon-button class="breadcrumb-action">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </nav>
+}

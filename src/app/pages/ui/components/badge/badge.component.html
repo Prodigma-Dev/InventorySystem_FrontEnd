@@ -1,0 +1,75 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Badges</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <mat-card class="b-1 card-sm-stretch shadow-none">
+      <mat-card-content>
+        <div matBadge="4" matBadgeOverlap="false" class="d-inline">
+          Text with a badge
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="b-1 card-sm-stretch shadow-none">
+      <mat-card-content>
+        <p>Multi-Colored Badges</p>
+        <mat-icon class="m-l-8 f-s-25 badge-indigo" matBadge="1">notifications</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-green" matBadge="2">check_circle</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-red" matBadge="3">error</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-yellow" matBadge="4">warning</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-cyan" matBadge="5">info</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-orange" matBadge="6">shopping_cart</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-azure" matBadge="7">bolt</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-violet" matBadge="8">visibility</mat-icon>
+        <mat-icon class="m-l-8 f-s-25 badge-rose" matBadge="9">favorite</mat-icon>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="b-1 card-sm-stretch shadow-none">
+      <mat-card-content>
+        <div matBadge="1" matBadgeSize="small" class="d-inline">
+          Text with small badge
+        </div>
+        <br /><br />
+        <div matBadge="1" matBadgeSize="large" class="d-inline">
+          Text with large badge
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="b-1 card-sm-stretch shadow-none">
+      <mat-card-content>
+        <p class="f-w-500 text-muted">
+          Button with a badge on the left
+          <button
+            mat-flat-button
+            color="primary"
+            matBadge="8"
+            matBadgePosition="before"
+            class="badge-error"
+          >
+            Action
+          </button>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="b-1 card-sm-stretch shadow-none">
+      <mat-card-content>
+        <p>
+          Button toggles badge visibility
+          <button
+            mat-flat-button
+            color="primary"
+            matBadge="7"
+            [matBadgeHidden]="hidden"
+            (click)="toggleBadgeVisibility()"
+          >
+            Hide
+          </button>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

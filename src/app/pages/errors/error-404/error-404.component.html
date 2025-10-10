@@ -1,0 +1,25 @@
+<mat-card class="cardWithShadow theme-card">
+    <mat-card-content class="min-h-87vh">
+        <div class="error-404">
+            <div class="d-flex align-items-start align-items-lg-center justify-content-center coming-soon-content">
+                <div class="row justify-content-center w-100">
+                    <div class="col-12" @fadeInUp>
+                        <a [routerLink]="['/dashboards/dashboard1']" class="m-t-20 d-flex justify-content-center">
+                            <img src="./assets/images/backgrounds/error-404.svg" class="align-middle w-80 w-md-60 w-lg-35"
+                                alt="logo" />
+                        </a>
+                        <h1 class="f-w-500 m-0 m-t-20 f-s-50 lh-base text-center">
+                            404
+                        </h1>
+                        <span class="f-s-18 d-block mat-body-1 m-t-10 text-center">
+                            Page not found.
+                        </span>
+                        <div class="d-flex justify-content-center m-t-20">
+                            <app-search class="d-block w-35" placeholder="Search for other pages ..." [showButton]="false" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,110 @@
+<mat-sidenav-container
+  class="mainWrapper"
+  autosize
+  autoFocus
+  [dir]="settings().rtl ? 'rtl' : 'ltr'"
+  [ngClass]="
+  {
+    'sidebarNav-mini': !this.isContentWidthFixed(),
+    'sidebarNav-horizontal': settings().menu === 'horizontal',
+  }"
+>
+  <!-- ============================================================== -->
+  <!-- Vertical Sidebar -->
+  <!-- ============================================================== -->
+
+  @if(settings().menu !== 'horizontal'){
+  <mat-sidenav
+    #leftsidenav
+    [mode]="isOver ? 'over' : 'side'"
+    [opened]="!isOver"
+    (closedStart)="onSidenavClosedStart()"
+    class="sidebarNav custom-border"
+  >
+    <div class="flex-layout">
+      <app-vertical-sidebar
+        (toggleMobileNav)="sidenav.toggle()"
+        [showToggle]="isOver"
+      ></app-vertical-sidebar>
+      <ng-scrollbar class="position-relative" style="height: 100%">
+        <mat-nav-list class="sidebar-list">
+          @for(item of navItems; track item) {
+          <app-vertical-nav-item [item]="item" (notify)="sidenav.toggle()">
+          </app-vertical-nav-item>
+          }
+        </mat-nav-list>
+      </ng-scrollbar>
+    </div>
+  </mat-sidenav>
+  }
+
+  <!-- ============================================================== -->
+  <!-- Main Content -->
+  <!-- ============================================================== -->
+  <mat-sidenav-content class="contentWrapper" #content>
+    <ng-scrollbar class="position-relative">
+      @if(settings().menu === 'horizontal'){
+      <app-header [showToggle]="false"></app-header>
+      <app-horizontal-sidebar></app-horizontal-sidebar>
+      }
+
+      <!-- ============================================================== -->
+      <!-- VerticalHeader -->
+      <!-- ============================================================== -->
+      @if(settings().menu !== 'horizontal'){
+      <app-header
+        [showToggle]="!isOver"
+        (toggleCollapsed)="toggleCollapsed()"
+        (toggleMobileNav)="sidenav.toggle()"
+      ></app-header>
+      } @if(settings().breadcrump){
+      <app-breadcrumb />
+      }
+
+      <main
+        class="pageWrapper"
+        [ngClass]="
+        {
+          'maxWidth': settings().container === 'boxed',
+        }"
+      >
+        <div>
+          <!-- ============================================================== -->
+          <!-- Outlet -->
+          <!-- ============================================================== -->
+          <router-outlet></router-outlet>
+        </div>
+      </main>
+    @if (settings().hasFooter) {
+    <app-footer [position]="settings().footerPosition"></app-footer>
+    }
+    </ng-scrollbar>
+
+    <div class="themeBuilderBtn">
+      <button
+        mat-fab
+        class="text-light bg-primary"
+        (click)="openThemeBuilder()"
+      >
+        <mat-icon class="material-symbols-outlined">settings</mat-icon>
+      </button>
+    </div>
+  </mat-sidenav-content>
+
+  <mat-sidenav
+    #rightsidenav
+    mode="over"
+    [opened]="isOpenRightSidebar()"
+    position="end"
+    class="sidebarRight"
+    (closedStart)="openThemeBuilder()"
+  >
+    <div class="flex-layout">
+      <ng-scrollbar class="position-relative" style="height: 100%">
+        <app-theme-skin
+          (toggleRightSidebar)="rightsidenav.toggle()"
+        ></app-theme-skin>
+      </ng-scrollbar>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>

@@ -1,0 +1,10 @@
+<footer
+  [ngClass]="{
+    'sticky bottom-0 left-0 w-full z-50': position === 'sticky',
+    static: position === 'static'
+  }"
+>
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    © {{ currentYear }} <span class="f-w-700 m-l-4">Alpha Fusion</span>. All rights reserved.
+  </div>
+</footer>

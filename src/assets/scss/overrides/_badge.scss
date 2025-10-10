@@ -1,0 +1,46 @@
+@use "../variables" as *;
+
+.badge-indigo .mat-badge-content {
+  background-color: $indigo;
+  color: $white;
+}
+
+.badge-green .mat-badge-content {
+  background-color: $green;
+  color: $white;
+}
+
+.badge-red .mat-badge-content {
+  background-color: $red;
+  color: $white;
+}
+
+.badge-yellow .mat-badge-content {
+  background-color: $yellow;
+  color: $black;
+}
+
+.badge-cyan .mat-badge-content {
+  background-color: $cyan;
+  color: $black;
+}
+
+.badge-orange .mat-badge-content {
+  background-color: $orange;
+  color: $white;
+}
+
+.badge-azure .mat-badge-content {
+  background-color: $azure;
+  color: $black;
+}
+
+.badge-violet .mat-badge-content {
+  background-color: $violet;
+  color: $white;
+}
+
+.badge-rose .mat-badge-content {
+  background-color: $rose;
+  color: $white;
+}

@@ -1,0 +1,105 @@
+<div class="faq min-h-87vh">
+
+    <div class="d-flex align-items-center justify-content-center h-100">
+        <div class="row justify-content-center w-70">
+            <div class="col-12" @fadeInUp>
+                <h2 class="f-w-700 f-s-40 text-center p-y-16">
+                    Frequently Asked Questions
+                </h2>
+                <div class="d-flex justify-content-center">
+                    <app-search class="d-block w-50" placeholder="Search for answers..." />
+                </div>
+                <mat-accordion class="example-headers-align">
+                    <mat-accordion>
+
+                        <!-- Question 1 -->
+                        <mat-expansion-panel [expanded]="step() === 0" (opened)="setStep(0)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>What is this admin template?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                This admin template is a fully responsive and customizable dashboard built with Angular
+                                Material 19 and Material 3. It provides multiple themes, custom UI components, and
+                                flexible
+                                layouts for building modern web applications.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 3 -->
+                        <mat-expansion-panel [expanded]="step() === 2" (opened)="setStep(2)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Can I customize the theme?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                Yes! The template supports multiple themes and allows customization using Material 3
+                                color palettes.
+                                You can modify styles in the SCSS files or adjust the theme configuration in the
+                                settings.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 4 -->
+                        <mat-expansion-panel [expanded]="step() === 3" (opened)="setStep(3)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Does this template support authentication?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                The template includes authentication UI components but does not have built-in backend
+                                authentication.
+                                You can integrate it with Firebase, Auth0, or any custom API for user management.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 5 -->
+                        <mat-expansion-panel [expanded]="step() === 4" (opened)="setStep(4)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Is this template mobile-friendly?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                Yes, it is fully responsive and optimized for desktop, tablet, and mobile devices.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 6 -->
+                        <mat-expansion-panel [expanded]="step() === 5" (opened)="setStep(5)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Can I use this template for commercial projects?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                Yes, as long as you follow the licensing terms. Please check the license file included
+                                with
+                                the template for details.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 7 -->
+                        <mat-expansion-panel [expanded]="step() === 6" (opened)="setStep(6)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>How do I get updates for this template?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                You will receive updates and bug fixes through the platform where you purchased the
+                                template.
+                                Follow the changelog for new features and improvements.
+                            </p>
+                        </mat-expansion-panel>
+
+                        <!-- Question 8 -->
+                        <mat-expansion-panel [expanded]="step() === 7" (opened)="setStep(7)">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>Where can I get support?</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>
+                                For technical support, check the documentation or contact our support team via email
+                                or the platform’s support system.
+                            </p>
+                        </mat-expansion-panel>
+
+                    </mat-accordion>
+
+                </mat-accordion>
+
+            </div>
+        </div>
+    </div>
+</div>

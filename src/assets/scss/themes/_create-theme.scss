@@ -1,0 +1,169 @@
+@use "@angular/material" as mat;
+@use "../variables";
+
+@mixin custom-theme($mode, $type, $primary, $density) {
+  color-scheme: $mode;
+  @include mat.theme(
+    (
+      color: $primary,
+      typography: variables.$font-family,
+      density: $density,
+    )
+  );
+
+  $bg-card: variables.$cardbg;
+  $bg-toolbar: variables.$toolbar;
+  $bg-sidebar: variables.$white;
+  $bg: variables.$background;
+  @if $mode == "dark" {
+    $bg-card: variables.$darkcardbg;
+    $bg-toolbar: variables.$darktoolbar;
+    $bg-sidebar: variables.$darksidebarbg;
+    $bg: variables.$darkbackground;
+  }
+
+  // @include mat.button-overrides(
+  //   (
+  //     filled-container-height: 40px,
+  //     outlined-container-height: 40px,
+  //     text-container-height: 40px,
+  //   )
+  // );
+
+  @include mat.button-overrides((
+    filled-container-color: transparent, // transparent to allow blur
+    filled-label-text-color: black,
+    filled-container-height: 60px,
+    filled-container-shape: 12px,
+    outlined-container-height: 60px,
+    text-container-height: 60px,
+  ));
+
+  @include mat.form-field-overrides((
+    container-height: 60px,
+    container-vertical-padding: 20px,
+    outlined-container-shape: 12px,
+    outlined-label-text-size: 0.9rem,
+    container-text-line-height: var(--mat-sys-body-medium-line-height),
+    container-text-size: var(--mat-sys-body-medium-size),
+    container-text-tracking: var(--mat-sys-body-medium-tracking),
+    container-text-weight: var(--mat-sys-body-medium-weight),
+  ));
+
+  @include mat.card-overrides(
+    (
+      outlined-container-color: $bg-card,
+      elevated-container-color: $bg-card,
+      elevated-container-elevation: none,
+    )
+  );
+
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: $bg-sidebar,
+      content-background-color: $bg,
+      container-width: 280px,
+    )
+  );
+
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: $bg-toolbar,
+      container-text-color: var(--mat-sys-primary),
+    )
+  );
+
+  @include mat.select-overrides(
+    (
+      panel-background-color: $bg-card,
+    )
+  );
+
+  @include mat.menu-overrides(
+    (
+      container-color: $bg-card,
+    )
+  );
+
+  @include mat.datepicker-overrides(
+    (
+      calendar-container-background-color: $bg-card,
+      calendar-container-elevation-shadow: var(--mat-sys-level3),
+      calendar-header-text-size: 11px,
+      calendar-header-text-weight: 400,
+      calendar-header-text-color: var(--mat-sys-outline),
+    )
+  );
+
+  @include mat.expansion-overrides(
+    (
+      container-shape: 4px,
+      header-text-size: 14px,
+      header-text-weight: 500,
+      header-text-line-height: inherit,
+      header-text-tracking: inherit,
+    )
+  );
+
+  @include mat.theme-overrides(
+    (
+      body-large-tracking: 0.012rem,
+    )
+  );
+
+  @include mat.slide-toggle-overrides(
+    (
+      unselected-focus-track-color: variables.$white,
+      unselected-track-color: variables.$white,
+      unselected-hover-track-color: variables.$white,
+    )
+  );
+
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      focus-state-layer-opacity: 0.12,
+
+      legacy-height: 30px,
+      legacy-shape: 5px,
+      legacy-label-text-size: 13px,
+      legacy-label-text-line-height: 18px,
+      legacy-label-text-weight: 500,
+      legacy-label-text-tracking: 0.15px,
+      legacy-focus-state-layer-opacity: 0.12,
+
+      hover-state-layer-opacity: 0.08,
+    )
+  );
+
+  @include mat.divider-overrides(
+    (
+      width: 1px,
+      color: var(--mat-sys-outline-variant),
+    )
+  );
+
+  @include mat.paginator-overrides(
+    (
+      container-size: 35px,
+      container-background-color: transparent,
+      form-field-container-height: 35px,
+      form-field-container-vertical-padding: 4px,
+    )
+  );
+
+  .mat-mdc-text-field-wrapper {
+    background: rgba(255,255,255); // semi-transparent
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+  }
+
+  .mat-mdc-form-field-outline {
+    border-radius: 12px;
+  }
+}

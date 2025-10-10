@@ -1,0 +1,50 @@
+<div class="coming-soon">
+    <div class="d-flex align-items-start align-items-lg-center justify-content-center coming-soon-content"
+        [@fadeInLeft]="{ value: '', params: { duration: 1000 , offset: 400} }">
+        <div class="row justify-content-center w-100">
+            <div class="col-11">
+                <a [routerLink]="['/dashboards/dashboard1']" class="m-t-20 d-flex justify-content-center">
+                    <img src="./assets/images/logos/indigo-logo.png" class="align-middle m-2 w-50" alt="logo" />
+                </a>
+                <h2 class="f-w-700 m-0 m-t-20 lh-base text-center">
+                    COMING SOON
+                </h2>
+
+                <h4 class="f-w-700 f-s-14 m-0 m-t-10 lh-base text-center">
+                    Our website is under construction.
+                </h4>
+
+                <div class="d-flex  align-items-center justify-content-center w-100  m-t-15 sosial-links">
+                    <a href="/" class="m-x-4">
+                        <img src="/assets/images/svgs/facebook.svg" alt="facebook" width="40" />
+                    </a>
+                    <a href="/" class="m-x-4">
+                        <img src="/assets/images/svgs/instagram.svg" alt="facebook" width="40" />
+                    </a>
+                    <a href="/" class="m-x-4">
+                        <img src="/assets/images/svgs/whatsapp.svg" alt="facebook" width="40" />
+                    </a>
+                    <a href="/" class="m-x-4">
+                        <img src="/assets/images/svgs/linkedin.svg" alt="facebook" width="40" />
+                    </a>
+                </div>
+
+                <span class="f-s-14 d-block mat-body-1 m-t-8 text-center">If you would like to get notified as soon as
+                    we launch, subscribe below and follow us on socials!</span>
+
+                <form class="m-t-30" [formGroup]="form" (ngSubmit)="submit()">
+
+                    <!-- email -->
+                    <mat-form-field appearance="outline" class="w-100" color="primary">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput type="email" formControlName="email" />
+                    </mat-form-field>
+
+                    <button mat-flat-button color="primary" class="w-100">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

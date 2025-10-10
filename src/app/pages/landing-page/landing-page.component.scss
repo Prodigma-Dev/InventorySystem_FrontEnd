@@ -1,0 +1,222 @@
+// Project card styles for last card-list
+.card-project-subject {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  text-align: left;
+  width: 100%;
+}
+.card-project-date {
+  color: #666;
+  font-size: 13px;
+  text-align: left;
+  width: 100%;
+}
+/* ================================
+   Page Background
+================================ */
+.bg-image {
+  background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
+  background-size: cover;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 0;
+  align-self: flex-start;
+}
+
+// ================================
+// Card Lists Section
+// ================================
+.card-lists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 430px;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.card-list {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-list h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+}
+
+.card-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: center;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-item-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.card-item-name {
+  font-weight: 500;
+  color: #222;
+}
+
+.card-person-name {
+  color: #666;
+  font-weight: 400;
+}
+
+
+.card-item-subject {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.card-project-subject {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.card-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 13px;
+}
+
+.card-item-date {
+  color: #666;
+}
+
+.card-item-company {
+  color: #888;
+  font-weight: 500;
+}
+
+.show-more-btn {
+  background: #E39625;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  width: 100%;
+}
+.show-more-btn:hover {
+  background: #c97c1f;
+}
+
+// /* ================================
+//    Greeting Text
+// ================================ */
+// #greeting-text {
+//   color: #E39625;
+//   text-align: center;
+//   font-family: "ShadowsIntoLightTwo-Regular";
+//   font-size: 30px;
+//   font-weight: 400;
+//   line-height: normal;
+//   margin-top: 20px;
+// }
+
+// /* ================================
+//    Form Container
+// ================================ */
+// .form-wrapper {
+//   width: 100%;
+//   max-width: 400px;
+//   padding: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+//   box-sizing: border-box;
+// }
+
+// /* ================================
+//    Mat Form Fields
+// ================================ */
+// .form-wrapper mat-form-field {
+//   width: 100%;
+// }
+
+// /* ================================
+//    Glassy Button Wrapper
+// ================================ */
+// .glass-btn-wrapper {
+//   width: 100%;
+//   border-radius: 12px;
+//   background: rgba(227, 150, 37); // orange semi-transparent
+//   backdrop-filter: blur(8px);
+//   display: inline-block;
+
+//   button {
+//     width: 100%;
+//     background: transparent !important; // button itself transparent
+//     color: black;
+//     height: 60px;
+//     border-radius: 12px;
+//     font-weight: 600;
+//   }
+// }
+
+// /* ================================
+//    Forgot Password Link
+// ================================ */
+// .forgot-password {
+//   margin-top: 1rem;
+//   text-align: center;
+
+//   a {
+//     color: #FFF;
+//     font-family: "Inter-Regular";
+//     font-size: 20px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     text-decoration-line: underline;
+//     text-decoration-style: solid;
+//     text-decoration-skip-ink: auto;
+//     text-decoration-thickness: auto;
+//     text-underline-offset: auto;
+//     text-underline-position: from-font;
+//   }
+// }

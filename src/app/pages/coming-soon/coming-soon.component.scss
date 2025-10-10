@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+.coming-soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: url('/assets/images/backgrounds/coming-soon-bg.jpg') no-repeat center center/cover;
+
+
+    .coming-soon-content {
+        background: #ffffff;
+        padding: 40px 0;
+        margin: 10px;
+        border-radius: v.$border-radius;
+        max-width: 500px;
+        color: v.$textPrimary;
+        box-shadow: rgba(37, 83, 185, 0.1) 0px 2px 30px 15px;
+
+        .sosial-links a:hover {
+            scale: 1.15;
+            transition: all 0.3s ease-in 0s;
+        }
+    }
+
+
+}

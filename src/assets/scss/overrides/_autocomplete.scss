@@ -1,0 +1,8 @@
+.custom-autocomplete {
+  .mat-mdc-option {
+    min-height: 35px !important;
+    &:hover {
+      background-color: var(--mat-sys-primary-container) !important;
+    }
+  }
+}

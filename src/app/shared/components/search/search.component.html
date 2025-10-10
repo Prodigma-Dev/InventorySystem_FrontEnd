@@ -1,0 +1,9 @@
+<div class="app-search">
+    <mat-form-field appearance="outline" class="w-100">
+        <input matInput [placeholder]="placeholder">
+        <mat-icon matPrefix class="p-l-0">search</mat-icon>
+        @if (showButton) {
+            <button matSuffix mat-flat-button color="primary">Search</button>
+        }
+    </mat-form-field>
+</div>

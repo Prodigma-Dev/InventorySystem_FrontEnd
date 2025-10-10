@@ -1,0 +1,26 @@
+@if (menuItem.children?.length) {
+<a class="cursor-pointer menuLink">
+  <mat-icon class="routeIcon">{{ menuItem.iconName }}</mat-icon>
+  <span #textSpan>
+    {{ menuItem.displayName }}
+  </span>
+  <span class="down-icon d-flex m-l-auto">
+    <mat-icon>expand_more</mat-icon>
+  </span>
+</a>
+} @else if(menuItem.route) {
+<a class="cursor-pointer menuLink" (click)="redirectMenu(menuItem.route)" [ngClass]="{
+    'activeMenu':  navService.isActive(menuItem)
+  }">
+  <mat-icon class="routeIcon">{{ menuItem.iconName }}</mat-icon>
+  <span #textSpan>{{ menuItem.displayName }}</span>
+
+</a>
+}
+@if (menuItem.children?.length) {
+<div class="childBox">
+  @for (child of menuItem.children; track child) {
+  <app-horizontal-nav-item [menuItem]="child" [isChild]="true" class="ddmenu"></app-horizontal-nav-item>
+  }
+</div>
+}

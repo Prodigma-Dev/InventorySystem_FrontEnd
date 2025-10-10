@@ -1,0 +1,88 @@
+/* ================================
+   Page Background
+================================ */
+.bg-image {
+  background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
+  background-size: cover;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================
+   Greeting Text
+================================ */
+#greeting-text {
+  color: #E39625;
+  text-align: center;
+  font-family: "ShadowsIntoLightTwo-Regular";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+/* ================================
+   Form Container
+================================ */
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* ================================
+   Mat Form Fields
+================================ */
+.form-wrapper mat-form-field {
+  width: 100%;
+}
+
+/* ================================
+   Glassy Button Wrapper
+================================ */
+.glass-btn-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(227, 150, 37); // orange semi-transparent
+  backdrop-filter: blur(8px);
+  display: inline-block;
+
+  button {
+    width: 100%;
+    background: transparent !important; // button itself transparent
+    color: black;
+    height: 60px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+}
+
+/* ================================
+   Forgot Password Link
+================================ */
+.forgot-password {
+  margin-top: 1rem;
+  text-align: center;
+
+  a {
+    color: #FFF;
+    font-family: "Inter-Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+}

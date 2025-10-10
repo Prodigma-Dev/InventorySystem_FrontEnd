@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+// font
+$font-family: "Plus Jakarta Sans", sans-serif;
+
+// light color variable
+$sidebarbg: #111827;
+$background: #f3f4f6;
+$cardbg: white;
+$toolbar: white;
+$cardshadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px,
+  rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+$hoverBgColor: #f6f9fc;
+
+// Dark color variable
+$darksidebarbg: #111827;
+$darkbackground: #111827;
+$darkcardbg: #111827;
+$darktoolbar: #111827;
+$darkcardshadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+  rgba(145, 158, 171, 0.02) 0px 12px 24px -4px;
+$darkborderColor: #333f55;
+$darkformborderColor: #465670;
+$darkhoverbgcolor: #333f55;
+
+// Sidenav
+$sidenav-desktop: 270px !default;
+$sidenav-mini: 80px !default;
+$header-height: 60px !default;
+$sidebar-position-spacing: 3px;
+
+// Footer
+$footer-height: 45px !default;
+
+//BorderColor
+$borderColor: #e5eaef;
+$borderformColor: #dfe5ef;
+$dividerBorderColor: #ffffff1f;
+// custom
+$primary: #0085db;
+$accent: #707a82;
+$warning: #ff9966;
+$error: #cc3300;
+$success: #4bd08b;
+$info: #46caeb;
+$white: #ffffff;
+$black: #000000;
+
+// theme colors
+$indigo: #4f46e5;
+$green: #388e3c;
+$red: #d32f2f;
+$yellow: #fbc02d;
+$cyan: #01c0c8;
+$orange: #fa896b;
+$azure: #007fff;
+$violet: #9b4f96;
+$rose: #f44336;
+
+$colors: (
+  "indigo": $indigo,
+  "green": $green,
+  "red": $red,
+  "yellow": $yellow,
+  "cyan": $cyan,
+  "orange": $orange,
+  "azure": $azure,
+  "violet": $violet,
+  "rose": $rose
+);
+
+$light: #f2f6fa;
+
+$gray-50: #f8f9fa;
+$gray-100: #7c8fac;
+$gray-200: #6e7e9a;
+$gray-300: #606e88;
+$gray-400: #525d76;
+$gray-500: #444c64;
+$gray-600: #363c52;
+$gray-700: #282b40;
+$gray-800: #1a1b2e;
+$gray-900: #0c0c1c;
+
+$light-primary: #e5f3fb;
+$light-accent: #e7ecf0;
+$light-warning: #fff6ea;
+$light-error: #ffede9;
+$light-success: #dffff3;
+$light-info: #e1f5fa;
+
+// layout
+$boxedWidth: 1200px;
+$layout-padding: 16px;
+$layout-margin: 16px;
+
+$border-radius: 18px;
+$cardBorderRadius: 10px;
+
+// text color
+$textPrimary: #111c2d;
+
+$body-color: #707a82;
+
+$box-shadow: 0 2px 6px rgba(37, 83, 185, 0.1);
+
+/* Default Light Theme */
+:root {
+  --menuLinkBgColor: rgb(79 70 229 / 20%);
+  // --mat-sys-body-large-size: 0.9rem;
+}

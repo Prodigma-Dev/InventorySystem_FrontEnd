@@ -1,0 +1,59 @@
+@use "../grid/variables" as *;
+@use 'sass:map';
+
+$columns: 100;
+
+// Generate width utility classes including min/max versions
+@mixin width_classes($bp-infix) {
+  @for $i from 1 through $columns {
+    .w#{$bp-infix}-#{$i}px { width: #{$i}px !important; }
+    .w#{$bp-infix}-#{$i} { width: #{'#{$i}%'} !important; }
+    .w#{$bp-infix}-#{$i}vw { width: #{$i}vw !important; }
+    .w#{$bp-infix}-#{$i}vh { width: #{$i}vh !important; }
+
+    .min-w#{$bp-infix}-#{$i}px { min-width: #{$i}px !important; }
+    .min-w#{$bp-infix}-#{$i} { min-width: #{'#{$i}%'} !important; }
+    .min-w#{$bp-infix}-#{$i}vw { min-width: #{$i}vw !important; }
+    .min-w#{$bp-infix}-#{$i}vh { min-width: #{$i}vh !important; }
+
+    .max-w#{$bp-infix}-#{$i}px { max-width: #{$i}px !important; }
+    .max-w#{$bp-infix}-#{$i} { max-width: #{'#{$i}%'} !important; }
+    .max-w#{$bp-infix}-#{$i}vw { max-width: #{$i}vw !important; }
+    .max-w#{$bp-infix}-#{$i}vh { max-width: #{$i}vh !important; }
+  }
+}
+
+// Generate height utility classes including min/max versions
+@mixin height_classes($bp-infix) {
+  @for $i from 1 through $columns {
+    .h#{$bp-infix}-#{$i}px { height: #{$i}px !important; }
+    .h#{$bp-infix}-#{$i} { height: #{'#{$i}%'} !important; }
+    .h#{$bp-infix}-#{$i}vw { height: #{$i}vw !important; }
+    .h#{$bp-infix}-#{$i}vh { height: #{$i}vh !important; }
+
+    .min-h#{$bp-infix}-#{$i}px { min-height: #{$i}px !important; }
+    .min-h#{$bp-infix}-#{$i} { min-height: #{'#{$i}%'} !important; }
+    .min-h#{$bp-infix}-#{$i}vw { min-height: #{$i}vw !important; }
+    .min-h#{$bp-infix}-#{$i}vh { min-height: #{$i}vh !important; }
+
+    .max-h#{$bp-infix}-#{$i}px { max-height: #{$i}px !important; }
+    .max-h#{$bp-infix}-#{$i} { max-height: #{'#{$i}%'} !important; }
+    .max-h#{$bp-infix}-#{$i}vw { max-height: #{$i}vw !important; }
+    .max-h#{$bp-infix}-#{$i}vh { max-height: #{$i}vh !important; }
+  }
+}
+
+// Loop through all breakpoints and generate responsive classes
+@each $bp-name, $bp-value in $breakpoints {
+  $bp-infix: map.get($breakpoint-infixs, $bp-name);
+
+  @if $bp-value == 0 {
+    @include width_classes('');
+    @include height_classes('');
+  } @else {
+    @media (min-width: $bp-value) {
+      @include width_classes('-#{$bp-infix}');
+      @include height_classes('-#{$bp-infix}');
+    }
+  }
+}

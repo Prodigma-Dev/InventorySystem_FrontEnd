@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+.breadcrumb-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  margin-top: $layout-margin;
+  background: $white;
+  height: 45px;
+  box-shadow: $box-shadow;
+  margin-left: $layout-margin;
+  margin-right: $layout-margin;
+  border-radius: $cardBorderRadius;
+}
+
+.breadcrumb-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.breadcrumb-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--mat-sys-primary);
+  margin: 0;
+}
+
+.breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--mat-sys-primary);
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  color: $gray-400;
+  transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb-link:hover {
+  color: var(--mat-sys-primary)
+}
+
+.breadcrumb-separator {
+  padding: 0 0.25rem;
+  color: $gray-100;
+}
+
+.breadcrumb-action {
+  color: $gray-400;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dark {
+  .breadcrumb-bar {
+    background: $darkbackground !important;
+    border-color: $dividerBorderColor;
+  }
+}

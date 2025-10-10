@@ -1,0 +1,174 @@
+@use "@angular/material" as mat;
+@use "../variables" as *;
+
+.indigo-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $indigo,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.green-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $green,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.red-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $red,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.yellow-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $yellow,
+      selected-state-text-color: $black,
+      // sarı üstündə ağ oxunmur
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.cyan-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $cyan,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.orange-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $orange,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.azure-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $azure,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.violet-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $violet,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}
+
+.rose-toggle-group {
+  @include mat.button-toggle-overrides(
+    (
+      height: 30px,
+      shape: 5px,
+      label-text-size: 13px,
+      label-text-line-height: 18px,
+      label-text-weight: 500,
+      label-text-tracking: 0.15px,
+      background-color: $white,
+      text-color: $black,
+      selected-state-background-color: $rose,
+      selected-state-text-color: $white,
+      hover-state-layer-opacity: 0.1,
+      focus-state-layer-opacity: 0.15,
+    )
+  );
+}

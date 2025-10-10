@@ -1,0 +1,66 @@
+<div class="blank-layout-container justify-content-center">
+    <div class="auth-wrapper-center">
+        <div class="w-100 position-relative rounded bg-white auth-card-center" @fadeInUp>
+            <div class="auth-body">
+
+                <a [routerLink]="['/dashboards/dashboard1']" class="m-t-20 d-flex justify-content-center">
+                    <img src="./assets/images/logos/indigo-logo.png" class="align-middle m-2 w-50 w-md-35" alt="logo" />
+                </a>
+
+                <div class="row p-l-16">
+                    <div class="col-md-6 two-step-bg">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start align-items-lg-center justify-content-center h-50vh">
+                            <div class="row justify-content-center w-100">
+                                <div class="col-11">
+                                    <h4 class="f-w-700 f-s-20 m-0 m-t-20 lh-base text-center">
+                                        Two Step Verification
+                                    </h4>
+                                    <span class="f-s-14 d-block mat-body-1 m-t-8 text-center">We sent a verification code to your mobile. Enter the code from the mobile in the field below.
+                                    </span>
+
+
+                                    <div class="or-border m-t-30">******1234</div>
+
+                                    <form class="m-t-30 two-step-form" [formGroup]="form" (ngSubmit)="submit()">
+                                        <h6 class="f-w-600 f-s-14 m-b-8 m-t-20">Type your 5 digits security code</h6>
+                                        <div formArrayName="digits" class="d-flex">
+                                            @for (field of digitsCtrl; track $index; let i = $index) {
+                                            <mat-form-field appearance="outline" class="w-100 m-l-4" color="primary">
+                                                <input matInput
+                                                #inputs
+                                                type="text"
+                                                maxlength="1"
+                                                pattern="[0-9]*"
+                                                inputmode="numeric"
+                                                [formControlName]="i"
+                                                (input)="onInput(i, $event)"
+                                                (keydown)="onKeyDown(i, $event)"
+                                                (paste)="onPaste(i, $event)" />
+                                            </mat-form-field>
+                                            }
+
+                                        </div>
+
+                                        <button #goButton mat-flat-button color="primary" class="w-100"
+                                            [disabled]="!form.valid">
+                                            Verify Account
+                                        </button>
+                                    </form>
+                                    <span class="d-block f-w-500 d-block m-t-24 text-center">Didn't get the code?
+
+                                        <a [routerLink]="['/']"
+                                            class="text-decoration-none text-primary f-w-500 f-s-14">
+                                            Resend</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
