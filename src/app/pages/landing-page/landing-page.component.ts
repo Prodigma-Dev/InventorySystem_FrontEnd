@@ -22,4 +22,10 @@ export class LandingPageComponent {
   goToNotInOffice() {
     this.router.navigate(['/dashboard/not-in-office']);
   }
+
+  onIconClick() {
+  console.log('Sticky icon clicked');
+  // e.g. scroll to top, open chat, open modal, etc.
+}
+
 }

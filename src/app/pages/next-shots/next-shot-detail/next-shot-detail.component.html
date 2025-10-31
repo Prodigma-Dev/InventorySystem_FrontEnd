@@ -1,0 +1,62 @@
+<div class="blank-layout-container bg-image">
+<h1 class="header">
+  @if (id) {
+    <span> {{ trimmedName }} </span>
+    <img
+      src="/assets/images/svgs/submit-edit.svg"
+      alt="Edit"
+      class="edit-icon"
+      (click)="onSubmit()"
+    />
+  } @else {
+    Yeni çəkiliş
+  }
+</h1>
+    <div class="w-100" @fadeInUp>
+
+       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+            <div class="field">
+                <label class="field-label">Çəkilişin adı</label>
+                <input matInput type="text" formControlName="name" placeholder="Ad daxil edin"/>
+            </div>
+
+            <div class="field">
+                <label class="field-label">Çəkilişin tarix və saatı</label>
+                <input matInput type="datetime-local" formControlName="date" placeholder="Tarix və saat seçin"/>
+            </div>
+
+            <div class="field">
+                <label class="field-label">Müştəri</label>
+                <select formControlName="customer" class="custom-select">
+                    <option value="" disabled selected>— Müştərini seçin —</option>
+                    @for (customer of customers; track customer.id) {
+                    <option [value]="customer.id">
+                        {{ customer.name }}
+                    </option>
+                    }
+                </select>
+            </div>
+
+            <div class="field">
+                <label class="field-label">Çəkilişin ünvanı</label>
+                <input matInput type="text" formControlName="address" placeholder="Ünvanı daxil edin"/>
+            </div>
+
+            <div class="field">
+                <label class="field-label">Əlavə məlumat</label>
+                <textarea matInput formControlName="note" placeholder="Komanda üçün əlavə qeydlərinizi edin" rows="5"></textarea>
+            </div>
+
+            @if (id) {
+                <button mat-raised-button class="custom-btn" [disabled]="form.invalid">
+                    Avadanlıqları əlavə etməyə başla
+                </button>
+            } @else {
+                <button mat-raised-button class="custom-btn" type="submit" [disabled]="form.invalid">
+                    Çəkilişi əlavə et
+                </button>
+            }
+        </form>
+
+    </div>
+</div>

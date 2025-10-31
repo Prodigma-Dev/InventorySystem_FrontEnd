@@ -1,0 +1,101 @@
+.header {
+  width: 100%;
+  background: #E39625;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: #23221F;
+  font-family: "Inter-Regular";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+  font-style: normal;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  .edit-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.bg-image {
+  background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
+  background-size: cover;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  color: white;
+  font-size: 24px;
+  font-family: "Inter-Regular";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.field input[matInput] {
+  height: 40px;
+  padding: 8px 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.field textarea[matInput] {
+  min-height: 100px;
+  resize: vertical;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.custom-select {
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px 4px;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #3f51b5;
+  }
+}
+
+.custom-btn {
+  width: 100%;
+  background: #E39625;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 16px;
+  color: #000;
+  font-size: 15px;
+}
