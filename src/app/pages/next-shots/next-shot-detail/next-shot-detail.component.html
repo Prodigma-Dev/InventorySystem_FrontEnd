@@ -48,7 +48,7 @@
             </div>
 
             @if (id) {
-                <button mat-raised-button class="custom-btn" [disabled]="form.invalid">
+                <button mat-raised-button class="custom-btn" type="button" (click)="goToAddEquipment()">
                     Avadanlıqları əlavə etməyə başla
                 </button>
             } @else {

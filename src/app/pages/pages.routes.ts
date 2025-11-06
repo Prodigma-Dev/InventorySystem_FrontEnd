@@ -5,6 +5,9 @@ import { OurLastProjectsComponent } from './our-last-projects/our-last-projects.
 import { NotInOfficeComponent } from './not-in-office/not-in-office.component';
 import { NextShotsComponent } from './next-shots/next-shots.component';
 import { NextShotDetailComponent } from './next-shots/next-shot-detail/next-shot-detail.component';
+import { FastEquipmentRentalComponent } from './fast-equipment-rental/fast-equipment-rental.component';
+import { EquipmentConfirmationComponent } from './fast-equipment-rental/equipment-confirmation/equipment-confirmation.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 export const PagesRoutes: Routes = [
   {
@@ -32,8 +35,23 @@ export const PagesRoutes: Routes = [
     data: { title: 'Növbədə nələr var?' }
   },
   {
+    path: 'dashboard/next-shots/add',
+    component: NextShotDetailComponent,
+  },
+  {
     path: 'next-shots/:id',
     component: NextShotDetailComponent,
-    data: { title: 'Çəkiliş detalları' }
+  },
+  {
+    path: 'equipment-rental',
+    component: FastEquipmentRentalComponent,
+  },
+  {
+    path: 'equipment-confirmation',
+    component: EquipmentConfirmationComponent,
+  },
+  {
+    path: 'user-account/:id',
+    component: UserAccountComponent,
   },
 ];

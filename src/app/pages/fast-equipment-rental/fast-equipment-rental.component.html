@@ -1,0 +1,66 @@
+<div class="blank-layout-container bg-image">
+    @if (itemId){
+        <div class="scanner-container">
+            <ngx-scanner-qrcode class="scanner"
+                #action="scanner"
+                [fps]="30"
+                [isBeep]="true"
+                [isMasked]="true"
+                [unScan]="false"
+                (event)="onScanForRefund($event)">
+            </ngx-scanner-qrcode>
+        </div>
+    } @else {
+        <div class="scanner-container">
+            <ngx-scanner-qrcode class="scanner"
+                #action="scanner"
+                [fps]="30"
+                [isBeep]="true"
+                [isMasked]="true"
+                [unScan]="false"
+                (event)="onScanForRental($event)">
+            </ngx-scanner-qrcode>
+            <h6>Avadanlığın üstündəki QR kodu skan et!</h6>
+        </div>
+        <div class="w-100" @fadeInUp>
+            <div class="card-lists-container">
+                <div class="card-list">
+                    <div class="card-item-wrapper">
+                <button class="delete-btn" (click)="onDelete()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
+                        <path d="M2.84534 10.348L36.2245 3.25323" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.1 1.27239L14.95 2.79176C14.636 2.8578 14.3381 2.98518 14.0735 3.16659C13.8088 3.348 13.5826 3.57987 13.4078 3.8489C13.233 4.11794 13.113 4.41884 13.0547 4.73435C12.9964 5.04986 13.001 5.37378 13.0682 5.68751L13.5752 8.07301L25.4962 5.53801L24.9892 3.15414C24.9231 2.84083 24.796 2.54361 24.615 2.27947C24.434 2.01532 24.2028 1.78942 23.9344 1.61467C23.6661 1.43992 23.366 1.31975 23.0513 1.26102C22.7365 1.20229 22.4132 1.20615 22.1 1.27239Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17.4703 29.25V17.0625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M24.7828 29.25V17.0625" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M30.2672 9.75H34.5328L32.2822 35.5453C32.2316 36.1562 31.9525 36.7256 31.5008 37.14C31.0491 37.5544 30.4577 37.7833 29.8447 37.7812H12.4004C11.789 37.7809 11.2001 37.5508 10.7504 37.1367C10.3008 36.7225 10.0231 36.1545 9.9726 35.5453L8.28748 15.2376" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    sil
+                </button>
+
+                <div
+                class="card-item"
+                (touchstart)="startSwipe($event)"
+                (touchmove)="moveSwipe($event)"
+                (touchend)="endSwipe($event)"
+                >
+                <div class="card-item-img-container">
+                    <img src="/assets/images/products/fx3.png" alt="" />
+                </div>
+                <div>
+                    <div class="card-item-subject">Sony Cinema line FX3 body</div>
+                    <div class="card-item-date">14.10.2025 | 09:00</div>
+                    <div class="card-item-bottom">
+                    <div class="card-item-duration">28 AZN / gün</div>
+                    <div class="card-item-person">00:00:00</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+                    <button mat-raised-button class="custom-btn" type="button" (click)="equipmentConfirm()">
+                        Yadda saxla
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

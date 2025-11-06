@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { fadeInUp } from 'src/app/shared/animations/fade-in-up.animation';
 
 @Component({
   selector: 'app-next-shot-detail',
   imports: [ReactiveFormsModule],
   templateUrl: './next-shot-detail.component.html',
-  styleUrl: './next-shot-detail.component.scss'
+  styleUrl: './next-shot-detail.component.scss',
+  animations: [fadeInUp]
 })
-export class NextShotDetailComponent {
-  id: string | null = null;
+export class NextShotDetailComponent implements OnInit {
+  id: number | null = null;
   form!: FormGroup;
 
   customers = [
@@ -20,13 +22,13 @@ export class NextShotDetailComponent {
   ];
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute, 
     private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    console.log('ID:', this.id);
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.form = this.fb.group({
       id: 0,
       name: [null, [Validators.required]],
@@ -38,8 +40,7 @@ export class NextShotDetailComponent {
   }
 
   get trimmedName(): string {
-    const name = this.form.get('name')?.value ?? '';
-    if (!name) return 'Çəkilişin adı';
+    const name = this.form.get('name')?.value ?? 'Name not found';
     return name.length > 17 ? name.slice(0, 17) + '...' : name;
   }
 
@@ -47,6 +48,13 @@ export class NextShotDetailComponent {
     if (this.form.valid) {
       console.log(this.form.value);
     }
+  }
+
+  goToAddEquipment() {
+    this.router.navigate(
+      ['/dashboard/equipment-rental'],
+      { queryParams: { shotId: this.id } }
+    );
   }
   
 }

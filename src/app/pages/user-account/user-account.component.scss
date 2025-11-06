@@ -1,0 +1,141 @@
+h1 {
+    width: 100%;
+    background: #E39625;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #23221F;
+    font-family: "Inter-Regular";
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    text-align: left;
+}
+
+/* ================================
+   Page Background
+================================ */
+.bg-image {
+  background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
+  background-size: cover;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ================================
+// Card Lists Section
+// ================================
+.card-lists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 430px;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.card-list {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-item-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden; // prevents content overflow when swiping
+}
+
+.card-item {
+  position: relative;
+  z-index: 1; // ensure it stays above the delete button
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  color: #23221F;
+  font-family: "Inter-Regular";
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  will-change: transform; // smoother animations
+  touch-action: pan-y;
+}
+
+.card-item-img-container {
+  width: 90px;
+  height: 90px;
+  background-color: #E39625;
+  border-radius: 8px;
+  margin-right: 12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.card-item-subject {
+  font-size: 20px;
+}
+
+.card-item-date {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.card-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-item-duration{
+  font-size: 15px;
+}
+
+.card-item-person{
+  font-size: 13px;
+  width: 30%;
+  text-align: left;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #E39625;
+  color: #23221F;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 0;
+  font-family: "Inter-Regular";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  font-style: normal;
+  padding: 6px 0;
+}
