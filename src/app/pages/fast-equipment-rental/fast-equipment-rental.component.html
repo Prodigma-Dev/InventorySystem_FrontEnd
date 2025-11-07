@@ -19,6 +19,7 @@
                 [isBeep]="true"
                 [isMasked]="true"
                 [unScan]="false"
+                (isReady)="onScannerReady()"
                 (event)="onScanForRental($event)">
             </ngx-scanner-qrcode>
             <h6>Avadanlığın üstündəki QR kodu skan et!</h6>
