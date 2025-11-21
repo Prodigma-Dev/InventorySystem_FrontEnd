@@ -4,7 +4,8 @@
 .bg-image {
   background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
   background-size: cover;
-  background-color: black;
+  background-color: #23221F;
+  background-blend-mode: soft-light;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,8 @@
 .card-list {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 12px 8px;
+  padding: 8px;
+  padding-top: 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -46,7 +48,7 @@
 
 .card-list h2 {
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   text-align: left;
   color: #FFF;
   font-family: "Inter-Regular";
@@ -150,7 +152,7 @@
 
 .icon-container {
   position: fixed;
-  bottom: 192px;
+  bottom: 247px;
   right: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);

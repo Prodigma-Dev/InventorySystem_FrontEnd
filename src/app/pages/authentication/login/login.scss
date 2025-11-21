@@ -4,7 +4,8 @@
 .bg-image {
   background: url("/assets/images/backgrounds/grunge.png") no-repeat center center;
   background-size: cover;
-  background-color: black;
+  background-color: #23221F;
+  background-blend-mode: soft-light;
   min-height: 100vh;
   display: flex;
   justify-content: center;

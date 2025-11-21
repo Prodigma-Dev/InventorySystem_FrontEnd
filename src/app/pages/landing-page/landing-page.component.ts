@@ -31,15 +31,15 @@ export class LandingPageComponent {
     const addIcon = this.el.nativeElement.querySelector('.add-icon');
 
     if (this.isExpanded) {
-      this.renderer.setStyle(shootingIconContainer, 'bottom', '192px');
-      this.renderer.setStyle(equipmentIconContainer, 'bottom', '192px');
-      this.renderer.setStyle(accountIconContainer, 'bottom', '192px');
+      this.renderer.setStyle(shootingIconContainer, 'bottom', '247px');
+      this.renderer.setStyle(equipmentIconContainer, 'bottom', '247px');
+      this.renderer.setStyle(accountIconContainer, 'bottom', '247px');
       this.renderer.setStyle(addIcon, 'rotate', '45deg');
       this.isExpanded = false;
     } else {
-      this.renderer.setStyle(shootingIconContainer, 'bottom', '392px');
-      this.renderer.setStyle(equipmentIconContainer, 'bottom', '332px');
-      this.renderer.setStyle(accountIconContainer, 'bottom', '262px');
+      this.renderer.setStyle(shootingIconContainer, 'bottom', '442px');
+      this.renderer.setStyle(equipmentIconContainer, 'bottom', '377px');
+      this.renderer.setStyle(accountIconContainer, 'bottom', '312px');
       this.renderer.setStyle(addIcon, 'rotate', '90deg');
       this.isExpanded = true;
     }
