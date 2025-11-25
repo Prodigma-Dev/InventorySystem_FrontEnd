@@ -34,15 +34,22 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.scanner.start();
+  ngAfterViewInit() {
     setTimeout(() => {
-      this.scanner.isReady.subscribe((ready) => {
+      // 1. Subscribe to isReady BEFORE start()
+      this.scanner.isReady.subscribe(ready => {
+        console.log("READY:", ready);
         if (ready) {
           this.onScannerReady();
         }
       });
-    }, 0);
+
+      // 2. Now start the scanner
+      this.scanner.start().subscribe({
+        next: () => console.log("Scanner started"),
+        error: err => console.error("Scanner start ERROR:", err)
+      });
+    }, 300);
   }
 
   onScanForRental(results: any): void {
@@ -130,33 +137,22 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
 
       this.devices.set(devices);
 
-      // try to find a rear/back/environment camera by label
+      // Match common Back camera labels
       const rear = devices.find((d) =>
-        /back|rear|trás|traseira|environment|ambiente/i.test(d.label)
+        /(back|rear|environment|main|wide|traseira|trás)/i.test(d.label)
       );
 
-      // fall back to the last camera (often the rear on Android)
+      // Fallback for Android (usually "Camera 1")
       const chosen = rear ?? devices[devices.length - 1];
 
-      if (chosen) this.scanner.playDevice(chosen.deviceId);
-      sub.unsubscribe(); // pick once
+      if (chosen) {
+        this.scanner.playDevice(chosen.deviceId).subscribe(() => {
+          console.log("Using camera:", chosen.label);
+        });
+      }
+
+      sub.unsubscribe();
     });
   }
 
-  //   onScannerInit(scanner: any) {
-  //   scanner.getMediaDevices().then((devices: any) => {
-  //              if (!devices?.length) return;
-
-  //       // try to find a rear/back/environment camera by label
-  //       const rear = devices.find((d: any) =>
-  //         /back|rear|trás|traseira|environment|ambiente/i.test(d.label)
-  //       );
-
-  //       // fall back to the last camera (often the rear on Android)
-  //       const chosen = rear ?? devices[devices.length - 1];
-
-  //       if (chosen) this.scanner.playDevice(chosen.deviceId);
-  //     console.log('Devices:', devices);
-  //   });
-  // }
 }
