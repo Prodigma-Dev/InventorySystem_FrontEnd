@@ -51,7 +51,7 @@ export class UserAccountComponent implements OnInit {
 
     if (this.currentX < -this.swipeThreshold) {
       // reveal action button
-      card.style.transform = 'translateX(-80px)';
+      card.style.transform = 'translateX(-130px)';
     } else {
       // reset position
       card.style.transform = 'translateX(0)';

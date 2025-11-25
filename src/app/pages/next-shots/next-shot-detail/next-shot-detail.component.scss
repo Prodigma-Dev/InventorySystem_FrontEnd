@@ -100,3 +100,16 @@
   color: #000;
   font-size: 15px;
 }
+
+/* General input & textarea styles */
+input[matInput],
+textarea[matInput],
+.custom-select {
+  color: #8F8F8F;
+  font-family: "Inter-Regular";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 8px !important;
+}
