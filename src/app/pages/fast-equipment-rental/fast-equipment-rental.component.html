@@ -7,7 +7,7 @@
                 [isBeep]="true"
                 [isMasked]="true"
                 [unScan]="false"
-                [constraints]="{ video: { facingMode: { ideal: 'environment' } } }"
+                [constraints]="{ video: { facingMode: 'environment' } }"
                 (event)="onScanForRefund($event)">
             </ngx-scanner-qrcode>
         </div>
@@ -19,7 +19,7 @@
                 [isBeep]="true"
                 [isMasked]="true"
                 [unScan]="false"
-                [constraints]="{ video: { facingMode: { ideal: 'environment' } } }"
+                [constraints]="{ video: { facingMode: 'environment' } }"
                 (event)="onScanForRental($event)">
             </ngx-scanner-qrcode>
             <h6>Avadanlığın üstündəki QR kodu skan et!</h6>
