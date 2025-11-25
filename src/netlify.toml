@@ -3,7 +3,14 @@
   to = "/index.html"
   status = 200
 
+# Allow camera
 [[headers]]
   for = "/*"
   [headers.values]
     Permissions-Policy = "camera=(self)"
+
+# FIX FOR SCANNER: Serve JS chunks correctly
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Content-Type = "application/javascript"
