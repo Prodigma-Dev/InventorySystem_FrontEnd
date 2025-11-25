@@ -13,6 +13,8 @@
             <button class="switch-btn" (click)="switchCamera()">
                 Switch Camera
             </button>
+
+            <p>{{ devices }}</p>
         </div>
     } @else {
         <div class="scanner-container">
@@ -25,6 +27,7 @@
                 (event)="onScanForRental($event)">
             </ngx-scanner-qrcode>
             <h6>Avadanlığın üstündəki QR kodu skan et!</h6>
+            <p>{{ devices }}</p>
             
             <button class="switch-btn" (click)="switchCamera()">
                 Switch Camera

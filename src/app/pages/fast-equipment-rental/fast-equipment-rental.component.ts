@@ -38,9 +38,11 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // Subscribe before starting the scanner
-    this.scanner.isReady.subscribe(r => {
-      if (r) this.loadDevices();
-    });
+    // this.scanner.isReady.subscribe(r => {
+    //   if (r) this.loadDevices();
+    // });
+
+    this.loadDevices();
 
     // start scanner
     this.scanner.start();
