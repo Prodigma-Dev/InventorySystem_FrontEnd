@@ -36,65 +36,68 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    // Subscribe before starting the scanner
-    // this.scanner.isReady.subscribe(r => {
-    //   if (r) this.loadDevices();
-    // });
-
-    this.loadDevices();
-
-    // start scanner
-    this.scanner.start();
-  }
-
-  loadDevices() {
-    this.scanner.devices.subscribe((devices) => {
-      if (!devices?.length) return;
-
-      this.devices = devices;
-
-      // Automatically select back camera if possible
-      const back = devices.findIndex(d =>
-        /(back|rear|environment|main|wide)/i.test(d.label)
-      );
-
-      this.currentIndex = back >= 0 ? back : 0;
-
-      this.scanner.playDevice(this.devices[this.currentIndex].deviceId);
-    });
-  }
-
-  switchCamera() {
-    if (!this.devices.length) return;
-
-    // Move to next camera
-    this.currentIndex = (this.currentIndex + 1) % this.devices.length;
-
-    const device = this.devices[this.currentIndex];
-
-    this.scanner.playDevice(device.deviceId).subscribe(() => {
-      console.log("Switched to:", device.label);
-    });
-  }
-
   // ngAfterViewInit() {
-  //   setTimeout(() => {
-  //     // 1. Subscribe to isReady BEFORE start()
-  //     this.scanner.isReady.subscribe(ready => {
-  //       console.log("READY:", ready);
-  //       if (ready) {
-  //         this.onScannerReady();
-  //       }
-  //     });
+  //   // Subscribe before starting the scanner
+  //   // this.scanner.isReady.subscribe(r => {
+  //   //   if (r) this.loadDevices();
+  //   // });
 
-  //     // 2. Now start the scanner
-  //     this.scanner.start().subscribe({
-  //       next: () => console.log("Scanner started"),
-  //       error: err => console.error("Scanner start ERROR:", err)
-  //     });
-  //   }, 300);
+  //   this.loadDevices();
+
+  //   // start scanner
+  //   this.scanner.start();
   // }
+
+  // loadDevices() {
+  //   this.scanner.devices.subscribe((devices) => {
+  //     if (!devices?.length) return;
+
+  //     this.devices = devices;
+
+  //     // Automatically select back camera if possible
+  //     const back = devices.findIndex(d =>
+  //       /(back|rear|environment|main|wide)/i.test(d.label)
+  //     );
+
+  //     this.currentIndex = back >= 0 ? back : 0;
+
+  //     this.scanner.playDevice(this.devices[this.currentIndex].deviceId);
+  //   });
+  // }
+
+  // switchCamera() {
+  //   if (!this.devices.length) return;
+
+  //   // Move to next camera
+  //   this.currentIndex = (this.currentIndex + 1) % this.devices.length;
+
+  //   const device = this.devices[this.currentIndex];
+
+  //   this.scanner.playDevice(device.deviceId).subscribe(() => {
+  //     console.log("Switched to:", device.label);
+  //   });
+  // }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      // 1. Subscribe to isReady BEFORE start()
+      // this.scanner.isReady.subscribe(ready => {
+      //   console.log("READY:", ready);
+      //   if (ready) {
+      //     this.onScannerReady();
+      //   }
+      // });
+      this.onScannerReady();
+
+
+      this.scanner.start();
+      // 2. Now start the scanner
+      // this.scanner.start().subscribe({
+      //   next: () => console.log("Scanner started"),
+      //   error: err => console.error("Scanner start ERROR:", err)
+      // });
+    }, 300);
+  }
 
   onScanForRental(results: any): void {
     this.scanner.pause();
@@ -175,29 +178,29 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
   }
   //#endregion
 
-//   onScannerReady() {
-//     const sub = this.scanner.devices.subscribe((devices) => {
-//       if (!devices?.length) return;
+  onScannerReady() {
+    const sub = this.scanner.devices.subscribe((devices) => {
+      if (!devices?.length) return;
 
-//       this.devices.set(devices);
+      // this.devices.set(devices);
 
-//       // Match common Back camera labels
-//       const rear = devices.find((d) =>
-//         /(back|rear|environment|main|wide|traseira|trás)/i.test(d.label)
-//       );
+      // Match common Back camera labels
+      const rear = devices.find((d) =>
+        /(back|rear|environment|main|wide|traseira|trás)/i.test(d.label)
+      );
 
-//       // Fallback for Android (usually "Camera 1")
-//       const chosen = rear ?? devices[devices.length - 1];
+      // Fallback for Android (usually "Camera 1")
+      const chosen = rear ?? devices[devices.length - 1];
 
-//       if (chosen) {
-//         this.scanner.playDevice(chosen.deviceId).subscribe(() => {
-//           console.log("Using camera:", chosen.label);
-//         });
-//       }
+      if (chosen) {
+        this.scanner.playDevice(chosen.deviceId).subscribe(() => {
+          console.log("Using camera:", chosen.label);
+        });
+      }
 
-//       sub.unsubscribe();
-//     });
-//   }
+      sub.unsubscribe();
+    });
+  }
 
 //   toggleCamera() {
 //   const devices = this.devices;
