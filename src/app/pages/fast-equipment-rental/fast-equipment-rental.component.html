@@ -9,6 +9,10 @@
                 [unScan]="false"
                 (event)="onScanForRefund($event)">
             </ngx-scanner-qrcode>
+
+            <button class="switch-btn" (click)="switchCamera()">
+                Switch Camera
+            </button>
         </div>
     } @else {
         <div class="scanner-container">
@@ -22,9 +26,9 @@
             </ngx-scanner-qrcode>
             <h6>Avadanlığın üstündəki QR kodu skan et!</h6>
             
-            <p style="color: white;width: 80%;">
-                {{devices() | json}}
-            </p>
+            <button class="switch-btn" (click)="switchCamera()">
+                Switch Camera
+            </button>
         </div>
         <div class="w-100" @fadeInUp>
             <div class="card-lists-container">
