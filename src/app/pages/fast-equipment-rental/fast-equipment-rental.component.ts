@@ -111,22 +111,5 @@ export class FastEquipmentRentalComponent implements OnInit, AfterViewInit {
     console.log('Delete action triggered');
   }
   //#endregion
-
-  onScannerReady() {
-    const sub = this.action.devices.subscribe(devices => {
-      if (!devices?.length) return;
-
-      // try to find a rear/back/environment camera by label
-      const rear = devices.find(d =>
-        /back|rear|trás|traseira|environment|ambiente/i.test(d.label)
-      );
-
-      // fall back to the last camera (often the rear on Android)
-      const chosen = rear ?? devices[devices.length - 1];
-
-      if (chosen) this.action.playDevice(chosen.deviceId);
-      sub.unsubscribe(); // pick once
-    });
-  }
   
 }
